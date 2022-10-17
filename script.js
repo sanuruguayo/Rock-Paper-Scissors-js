@@ -11,7 +11,6 @@ function playerSelection() {
     player1 = prompt("Rock, paper or Scissors?").toLowerCase();
     if (player1 == "rock" || "paper" || "scissors") {
       valid = true;
-      break;
     } else {
       console.log("Please choose: Rock, paper or Scissors");
     }
