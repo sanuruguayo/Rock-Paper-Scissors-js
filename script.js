@@ -6,8 +6,17 @@ function computerPlay() {
 }
 
 function playerSelection() {
-  const playerSelection = prompt("Rock, paper or Scissors?").toLowerCase();
-  return playerSelection;
+  let valid = false;
+  while (!valid) {
+    player1 = prompt("Rock, paper or Scissors?").toLowerCase();
+    if (player1 == "rock" || player1 == "paper" || player1 == "scissors") {
+      valid = true;
+      break;
+    } else {
+      console.log("Please choose: Rock, paper or Scissors");
+    }
+  }
+  return player1;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -15,46 +24,41 @@ function playRound(playerSelection, computerSelection) {
     return "DRAW";
   } else if (playerSelection == "rock") {
     if (computerSelection == "paper") return "LOST";
-    // console.log("You Lose! Paper beats Rock");
     if (computerSelection == "scissors") return "WIN";
-    // console.log("You Won! Rock beats Scissors");
   } else if (playerSelection == "paper") {
     if (computerSelection == "rock") return "WIN";
-    // console.log("You Won! Paper beats Rock");
     if (computerSelection == "scissors") return "LOST";
-    // console.log("You Lose! Scissors beats Paper");
   } else if (playerSelection == "scissors") {
     if (computerSelection == "rock") return "LOST";
-    // console.log("You Lose! Rock beats Scissors");
     if (computerSelection == "paper") return "WIN";
-    // console.log("You Won! Scissors beats paper");
-  } else {
-    console.log("¿WTF?");
   }
 }
 
+// else {
+//   console.log("¿WTF?");
+// }
 function game() {
-  let CountP1=0;
-  let CountPc=0;
+  let CountP1 = 0;
+  let CountPc = 0;
   for (let i = 0; i < 5; i++) {
     const player1 = playerSelection();
-    console.log(player1);
+    console.log("P1 - " + player1);
     const computer = computerPlay();
-    console.log(computer);
+    console.log("COMP - " + computer);
     const result = playRound(player1, computer);
     console.log(result);
-    if(result === "LOST"){
+    if (result === "LOST") {
       CountPc = CountPc + 1;
-    }else if(result ==="WIN"){
+    } else if (result === "WIN") {
       CountP1 = CountP1 + 1;
     }
   }
-  if(CountPc===CountP1){
-    alert("It's a Draw!")
-  }else if(CountPc>CountP1){
-    alert("Computer Wins!")
-  } else{
-    alert("Player 1 Wins!")
+  if (CountPc === CountP1) {
+    alert("It's a Draw!");
+  } else if (CountPc > CountP1) {
+    alert("Computer Wins!");
+  } else {
+    alert("Player 1 Wins!");
   }
 }
 
