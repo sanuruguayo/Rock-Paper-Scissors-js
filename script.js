@@ -9,7 +9,7 @@ function playerSelection() {
   let valid = false;
   while (!valid) {
     player1 = prompt("Rock, paper or Scissors?").toLowerCase();
-    if (player1 == "rock" || "paper" || "scissors") {
+    if (player1 == "rock" || player1 == "paper" || player1 == "scissors") {
       valid = true;
     } else {
       console.log("Please choose: Rock, paper or Scissors");
