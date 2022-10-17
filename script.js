@@ -34,9 +34,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// else {
-//   console.log("¿WTF?");
-// }
 function game() {
   let CountP1 = 0;
   let CountPc = 0;
@@ -53,6 +50,7 @@ function game() {
       CountP1 = CountP1 + 1;
     }
   }
+  
   if (CountPc === CountP1) {
     alert("It's a Draw!");
   } else if (CountPc > CountP1) {
