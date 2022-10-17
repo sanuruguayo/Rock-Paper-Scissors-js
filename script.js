@@ -9,7 +9,7 @@ function playerSelection() {
   let valid = false;
   while (!valid) {
     player1 = prompt("Rock, paper or Scissors?").toLowerCase();
-    if (player1 == "rock" || player1 == "paper" || player1 == "scissors") {
+    if (player1 == "rock" || "paper" || "scissors") {
       valid = true;
       break;
     } else {
@@ -50,7 +50,7 @@ function game() {
       CountP1 = CountP1 + 1;
     }
   }
-  
+
   if (CountPc === CountP1) {
     alert("It's a Draw!");
   } else if (CountPc > CountP1) {
